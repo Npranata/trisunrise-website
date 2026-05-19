@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ArrowRight, CheckCircle, Factory, Truck, ShieldCheck, Leaf, FlaskConical } from "lucide-react";
+import logo from "./assets/companylogo.png";
 
 const Card = ({ className = "", children }) => (
   <div className={className}>{children}</div>
@@ -145,31 +146,47 @@ const strengths = [
 export default function TrisunriseWebsite() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div>
-            <p className="text-lg font-bold tracking-tight text-slate-950">PT Trisunrise Abadi Chemindo</p>
-            <p className="text-xs uppercase tracking-[0.25em] text-blue-700">Chemical Trading Partner</p>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
-            <a href="#about" className="hover:text-blue-700">About</a>
-            <a href="#products" className="hover:text-blue-700">Products</a>
-            <a href="#industries" className="hover:text-blue-700">Industries</a>
-            <a href="#contact" className="hover:text-blue-700">Contact</a>
-          </nav>
-          <Button asChild className="rounded-full bg-blue-700 hover:bg-blue-800">
-            <a href="mailto:trisunachem@gmail.com">Get in Touch</a>
-          </Button>
-        </div>
-      </header>
+<header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+  <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-6 md:py-4">
+    <div className="flex min-w-0 items-center gap-2 md:gap-3">
+      <img
+        src={logo}
+        alt="PT Trisunrise Logo"
+        className="h-12 w-12 shrink-0 object-contain md:h-24 md:w-20"
+      />
+
+      <div className="min-w-0">
+        <p className="text-sm font-bold leading-tight tracking-tight text-slate-950 md:text-lg">
+          PT Trisunrise Abadi Chemindo
+        </p>
+
+        <p className="mt-1 text-[10px] uppercase leading-tight tracking-[0.2em] text-blue-700 md:text-xs md:tracking-[0.25em]">
+          Chemical Trading Partner
+        </p>
+      </div>
+    </div>
+
+    <nav className="hidden items-center gap-8 text-base font-medium text-slate-700 lg:flex">
+      <a href="#about" className="hover:text-blue-700">About</a>
+      <a href="#products" className="hover:text-blue-700">Products</a>
+      <a href="#industries" className="hover:text-blue-700">Industries</a>
+      <a href="#contact" className="hover:text-blue-700">Contact</a>
+    </nav>
+
+    <Button asChild className="shrink-0 rounded-full bg-blue-700 px-4 py-2 text-sm text-white hover:bg-blue-800 md:px-5 md:py-2.5 md:text-base">
+      <a href="mailto:trisunachem@gmail.com">Get in Touch</a>
+    </Button>
+  </div>
+</header>
 
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <img src={heroImage} alt="Industrial chemical facility" className="absolute inset-0 h-full w-full object-cover opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-blue-950/70" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:py-32">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <p className="mb-4 inline-flex rounded-full border border-white/20 px-4 py-2 text-sm text-blue-100">
-              Trusted Chemical Solutions for Indonesian Industries
+            <p className="mb-4 inline-flex max-w-full rounded-full border border-white/20 px-4 py-2 text-xs leading-snug text-blue-100 md:text-sm">
+              Trusted Chemical Solutions
+              <span className="hidden sm:inline"> for Indonesian Industries</span>
             </p>
             <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
               Empowering Industries with Quality Chemical Solutions
